@@ -42,4 +42,20 @@ export default class UsersController {
       data: user,
     }
   }
+
+  public async update({ params, request }: HttpContextContract) {
+    const body = request.body()
+
+    const user = await User.findOrFail(params.id)
+
+    user.email = body.email
+    user.password = body.password
+
+    await user.save()
+
+    return {
+      message: 'User atualizado com sucesso!',
+      data: user,
+    }
+  }
 }
