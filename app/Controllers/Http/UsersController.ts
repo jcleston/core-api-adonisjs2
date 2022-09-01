@@ -4,7 +4,7 @@ import User from 'App/Models/User'
 
 export default class UsersController {
   public async index() {
-    const users = await User.query()
+    const users = await User.query().preload('skills')
 
     return {
       data: users,
