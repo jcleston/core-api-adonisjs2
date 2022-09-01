@@ -14,12 +14,11 @@
 ## Menu Geral
 <!--ts-->
 * [Instalação](#instalação)
-  * [Comandos](#comandos)
-* [Desenvolvimento](#desenvolvimento)
+* [Comandos](#comandos)
   * [Model](#model)
   * [Migration](#migration)
   * [Controller](#controller)
-  * [Rotas](#rotas)
+* [Desenvolvimento](#desenvolvimento)
 * [MER](#mer)
 
 
@@ -64,6 +63,7 @@ Route.group(() => {
   })
 }).prefix('/api')
 ```
+<br /><br />
 
 ## Comandos
 ```shell
@@ -73,11 +73,6 @@ $ node ace
 Para ver as rotas disponiveis
 $ node ace list:routes
 ```
-
-<br /><br />
-
-## Desenvolvimento
-Iremos utilizar os conceitos de Model, Migrations, Controller e Rotas
 
 ## Model
 Para criar um model
@@ -97,11 +92,38 @@ Para criar um controller
 $ node ace make:controller Teste
 ```
 
-## Rotas
-Exemplo de configuração de rota
+<br /><br />
+
+## Desenvolvimento
+Iremos utilizar os conceitos de Model, Migrations, Controller e Rotas
+
+
+1 - Criar e configurar a Model/Migration
 ```shell
-Route.resource('/testes', 'TesteController').apiOnly()
+$ node ace make:model Teste -m
 ```
+
+2 - Rodar a Migration
+```shell
+$ node ace migration:run
+```
+
+3 - Criar e configurar a Controller
+```shell
+$ node ace make:controller Teste
+```
+
+4 - Configurar a rota
+```shell
+Route.resource('/testes', 'TestesController').apiOnly()
+```
+
+5 - Testar usando a URL
+```shell
+http://127.0.0.1:3333/api/testes
+```
+<br /><br />
+
 ## Mer
 Modelo de Entidade e Relacionamento utilizado no projeto
 
