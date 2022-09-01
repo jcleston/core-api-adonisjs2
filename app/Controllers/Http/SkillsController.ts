@@ -18,4 +18,17 @@ export default class SkillsController {
       data: skill,
     }
   }
+
+  public async store({ request, response }: HttpContextContract) {
+    const body = request.body()
+
+    const skill = await Skill.create(body)
+
+    response.status(201)
+
+    return {
+      message: 'Skill criada com sucesso!',
+      data: skill,
+    }
+  }
 }
