@@ -102,3 +102,9 @@ Exemplo de configuração de rota
 ```shell
 Route.resource('/testes', 'TesteController').apiOnly()
 ```
+## Mer
+Modelo de Entidade e Relacionamento utilizado no projeto
+
+<p>
+  <img src="https://raw.githubusercontent.com/jcleston/core-api-adonisjs2/main/tmp/uploads/many-to-many.webp" width="350" title="hover text" alt="accessibility text">
+</p>
