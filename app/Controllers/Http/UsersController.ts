@@ -12,10 +12,23 @@ export default class UsersController {
   }
 
   public async show({ params }: HttpContextContract) {
-    const pessoa = await User.findOrFail(params.id)
+    const user = await User.findOrFail(params.id)
 
     return {
-      data: pessoa,
+      data: user,
+    }
+  }
+
+  public async store({ request, response }: HttpContextContract) {
+    const body = request.body()
+
+    const user = await User.create(body)
+
+    response.status(201)
+
+    return {
+      message: 'User criado com sucesso!',
+      data: user,
     }
   }
 }
