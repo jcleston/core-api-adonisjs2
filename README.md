@@ -40,11 +40,6 @@ Instalando o adonisjs
 $ npm init adonis-ts-app@latest api-adonisjs
 ```
 
-Iniciando o server
-```shell
-$ node ace serve --watch
-```
-
 Instalando e configurando o lucid
 ```shell
 $ npm i @adonisjs/lucid
@@ -66,11 +61,18 @@ Route.group(() => {
 <br /><br />
 
 ## Comandos
+Iniciando o server
 ```shell
+$ node ace serve --watch
+```
+
 Para ver todas as opções
+```shell
 $ node ace
+```
 
 Para ver as rotas disponiveis
+```shell
 $ node ace list:routes
 ```
 
