@@ -31,4 +31,15 @@ export default class SkillsController {
       data: skill,
     }
   }
+
+  public async destroy({ params }: HttpContextContract) {
+    const skill = await Skill.findOrFail(params.id)
+
+    await skill.delete()
+
+    return {
+      message: 'Skill excluída com sucesso!',
+      data: skill,
+    }
+  }
 }
