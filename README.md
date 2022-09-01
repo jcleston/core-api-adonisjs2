@@ -130,3 +130,5 @@ Modelo de Entidade e Relacionamento utilizado no projeto
 <p>
   <img src="https://raw.githubusercontent.com/jcleston/core-api-adonisjs2/main/tmp/uploads/many-to-many.webp" width="450" title="hover text" alt="accessibility text">
 </p>
+
+Documentação oficial: https://docs.adonisjs.com/guides/introduction
