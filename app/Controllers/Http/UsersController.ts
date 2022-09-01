@@ -1,4 +1,4 @@
-// import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
 import User from 'App/Models/User'
 
@@ -8,6 +8,14 @@ export default class UsersController {
 
     return {
       data: users,
+    }
+  }
+
+  public async show({ params }: HttpContextContract) {
+    const pessoa = await User.findOrFail(params.id)
+
+    return {
+      data: pessoa,
     }
   }
 }
