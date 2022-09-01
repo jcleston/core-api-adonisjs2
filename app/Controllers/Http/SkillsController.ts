@@ -42,4 +42,19 @@ export default class SkillsController {
       data: skill,
     }
   }
+
+  public async update({ params, request }: HttpContextContract) {
+    const body = request.body()
+
+    const skill = await Skill.findOrFail(params.id)
+
+    skill.name = body.name
+
+    await skill.save()
+
+    return {
+      message: 'Skill atualizada com sucesso!',
+      data: skill,
+    }
+  }
 }
