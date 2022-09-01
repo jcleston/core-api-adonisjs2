@@ -19,6 +19,8 @@
   * [Model](#model)
   * [Migration](#migration)
   * [Controller](#controller)
+  * [Rotas](#rotas)
+* [MER](#mer)
 
 
 <!--te-->
@@ -75,7 +77,7 @@ $ node ace list:routes
 <br /><br />
 
 ## Desenvolvimento
-Iremos utilizar os conceitos de Model, Controller, Rotas e Migrations
+Iremos utilizar os conceitos de Model, Migrations, Controller e Rotas
 
 ## Model
 Para criar um model
@@ -93,4 +95,10 @@ $ node ace migration:run
 Para criar um controller
 ```shell
 $ node ace make:controller Teste
+```
+
+## Rotas
+Exemplo de configuração de rota
+```shell
+Route.resource('/testes', 'TesteController').apiOnly()
 ```
