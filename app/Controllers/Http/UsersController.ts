@@ -1,3 +1,13 @@
 // import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
-export default class UsersController {}
+import User from 'App/Models/User'
+
+export default class UsersController {
+  public async index() {
+    const users = await User.query()
+
+    return {
+      data: users,
+    }
+  }
+}
